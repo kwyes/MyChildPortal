@@ -1,0 +1,18 @@
+<?php
+  $format = $_POST['format'];
+  $folder = $_POST['folder'];
+  $limit = $_POST['limit'];
+  // $token = file_get_contents('https://api-m.bodwell.edu/canto/cantoAppToken.php?type=web');
+  $url = "https://bodwell.canto.com/api/v1/{$format}/{$folder}?limit={$limit}&start=0";
+  $token = 'ad8fda97b10441ecab3c721b99553b77';
+  // create curl resource
+  $options = array('http' => array(
+      'method'  => "GET",
+      'header' => array("Authorization: Bearer ".$token, "Cache-Control: no-cache, must-revalidate")
+  ));
+  $context  = stream_context_create($options);
+  $response = file_get_contents($url, false, $context);
+  echo $response;
+
+
+ ?>

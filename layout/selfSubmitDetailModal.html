@@ -1,0 +1,195 @@
+<!-- Modal for School Activity Detail(on Browse School Activities) -->
+<div class="modal" id="selfSubmitDetailModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="card card-login card-plain">
+        <div class="modal-header justify-content-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="modal-close-icon">&times;</span>
+          </button>
+
+          <div class="header header-primary text-center">
+            <h4>View Self-Submit Hours</h4>
+            <label class="sSubmitMdl-term"></label>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="card-body">
+            <div class="text-right font-italic"></div>
+            <form class="needs-validation" novalidate="novalidate" id="selfSubmitDetailForm">
+              <input type="hidden" id="sSubmitMdl-hidden-actId">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="sSubmitMdl-student-img">Student Picture</label><br/>
+                    <div class="text-center">
+                      <img src="img/user.png" alt="student-img" id="sSubmitMdl-student-img" onerror="this.src='img/user.png'" class="img-m" draggable="false">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="sSubmitMdl-studentId">Student ID</label>
+                    <input type="text" class="form-control" id="sSubmitMdl-studentId" name="studentId" readonly="readonly">
+                  </div>
+                  <div class="form-group">
+                    <label for="sSubmitMdl-student-name">Student</label>
+                    <input type="text" class="form-control" id="sSubmitMdl-student-name" name="student" readonly="readonly">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="sSubmitMdl-approverPic">Approver Picture</label><br/>
+                    <div class="text-center">
+                      <img src="img/user.png" alt="approverPic" id="sSubmitMdl-approverPic" onerror="this.src='img/user.png'" class="img-m" draggable="false">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="sSubmitMdl-apprStaff">Approver Staff</label>
+
+                    <input class="form-control" type="text" id="sSubmitMdl-approver" value="">
+                    <input type="hidden" id="sSubmitMdl-approver-FullName" name="approverFullName" value="">
+                    <div class="invalid-feedback">
+                      This field is required.
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="sSubmitMdl-status">Status</label>
+                    <input type="text" id="sSubmitMdl-status" class="form-control" name="status" readonly="readonly">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sSubmitMdl-title">Activity Name</label>
+                <input type="text" class="form-control" id="sSubmitMdl-title" name="title" required="required">
+                <div class="invalid-feedback">
+                  This field is required.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sSubmitMdl-category">Activity Category
+                </label>
+                <select name="category" id="sSubmitMdl-category" class="custom-select" required="required">
+                  <option value="">Select..</option>
+                  <option value="10">Physical, Outdoor & Recreation Education</option>
+                  <option value="11">Academic, Interest & Skill Development</option>
+                  <option value="12">Citizenship, Interaction & Leadership Experience</option>
+                  <option value="13">Arts, Culture & Local Exploration</option>
+                </select>
+                <div class="invalid-feedback">
+                  This field is required.
+                </div>
+              </div>
+
+              <div class="form-group dispVLWE">
+                <label>Qualifies for Career Exploration hours?</label>
+                <div class="row mg-0">
+                  <div class="form-check-radio col-md-3">
+                    <label class="form-check-label">
+                      <input class="form-check-input sSubmit-vlwe" type="radio" name="vlwe" id="" value="1" autocomplete="off" disabled="disabled">
+                      Yes
+                      <span class="form-check-sign"></span>
+                    </label>
+                  </div>
+                  <div class="form-check-radio col-md-3">
+                    <label class="form-check-label">
+                      <input class="form-check-input sSubmit-vlwe" type="radio" name="vlwe" id="" value="0" autocomplete="off" disabled="disabled">
+                      No
+                      <span class="form-check-sign"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sSubmitMdl-location">Location (e.g. Heywood Park, Genesis Gym, etc.)
+                </label>
+                <input type="text" class="form-control" id="sSubmitMdl-location" name="location" required="required">
+                <div class="invalid-feedback">
+                  This field is required.
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="sSubmitMdl-sDate">Start Date</label>
+                    <input type="text" class="form-control datepicker" data-date-format="YYYY-MM-DD" name="sDate" id="sSubmitMdl-sDate" required="required">
+                    <div class="invalid-feedback">
+                      This field is required.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="sSubmitMdl-eDate">End Date</label>
+                    <input type="text" class="form-control datepicker" data-date-format="YYYY-MM-DD" name="eDate" id="sSubmitMdl-eDate" required="required">
+                    <div class="invalid-feedback">
+                      This field is required.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="sSubmitMdl-hours">Hours</label>
+                    <input type="text" id="sSubmitMdl-hours" class="form-control" name="status" readonly="readonly">
+                    <div class="invalid-feedback">
+                      This field is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="addSubmitMdl-stuComment1">Student Comment</label>
+                    <textarea id="sSubmitMdl-stuComment1" name="comment1" rows="10" class="customTextarea form-control" placeholder="" maxlength="1000" readonly="readonly"></textarea>
+                    <div class="invalid-feedback">
+                      This field is required.
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea id="sSubmitMdl-stuComment2" name="comment2" rows="10" class="form-control" maxlength="1000" required="required" readonly="readonly"></textarea>
+                    <div class="invalid-feedback">
+                      This field is required.
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea id="sSubmitMdl-stuComment3" name="comment3" rows="10" class="form-control" maxlength="1000" required="required" readonly="readonly"></textarea>
+                    <div class="invalid-feedback">
+                      This field is required.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="sSubmitMdl-aprComment">Approver Comment</label>
+                    <textarea id="sSubmitMdl-aprComment" name="comment" rows="10" class="customTextarea form-control" maxlength="1000" readonly="readonly"></textarea>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="text-center modal-footer-wrapper">
+            <div class="row">
+              <div class="col-md-12 text-right">
+                <button type="button" class="btn btn-fill btn-default" id="sSubmitMdl-close-btn">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $('input').attr('readonly', 'readonly');
+    $('select').attr('disabled', 'true');
+
+  });
+</script>

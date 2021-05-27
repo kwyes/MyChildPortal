@@ -1,0 +1,41 @@
+<div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg text-center" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close mediaMdl-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="modal-close-icon">&times;</span>
+                </button>
+                <!-- 16:9 aspect ratio -->
+                <div id="carouselExampleControls" class="carousel" data-ride="carousel">
+                    <div class="carousel-inner">
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $carousel = $('#carouselExampleControls');
+        $carousel.carousel({
+            interval: false
+        });
+
+        $carousel.bind('slide.bs.carousel', function (e) {
+            $('video').trigger('pause');
+        });
+
+        $("#mediaModal").on("hide.bs.modal", function () {
+            $('video').trigger('pause');
+        });
+    })
+</script>
