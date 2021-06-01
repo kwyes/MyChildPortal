@@ -7,13 +7,7 @@ function sendEmail($from, $to, $cc, $subject, $body, $altBody = '') {
     $mail = new PHPMailer();
     $mail->isSMTP();
 
-    $mail->CharSet = "UTF-8";
-    $mail->SMTPDebug = false;
-    $mail->Host = 'smtp.sendgrid.net';
-    $mail->Port = 587;
-    $mail->SMTPSecure = 'TLS';
-    $mail->SMTPAuth = true;
-
+    
 
 
     $mail->setFrom($from['email'], $from['name']);
