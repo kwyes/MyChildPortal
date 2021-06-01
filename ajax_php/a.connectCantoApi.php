@@ -4,7 +4,7 @@
   $limit = $_POST['limit'];
   // $token = file_get_contents('https://api-m.bodwell.edu/canto/cantoAppToken.php?type=web');
   $url = "https://bodwell.canto.com/api/v1/{$format}/{$folder}?limit={$limit}&start=0";
-  $token = 'ad8fda97b10441ecab3c721b99553b77';
+  $token = '';
   // create curl resource
   $options = array('http' => array(
       'method'  => "GET",
